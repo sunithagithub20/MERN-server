@@ -77,4 +77,7 @@ async function StartServer(){
         console.log(`server live 3001`);
     })
 }
+function Testing(){
+    return 0;
+}
 StartServer();
