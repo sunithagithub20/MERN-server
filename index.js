@@ -80,5 +80,7 @@ async function StartServer(){
 function Testing(){
     return 1;
 }
+function Test2(){return false;}
 Testing();
+Test();
 StartServer();
