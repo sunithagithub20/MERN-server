@@ -35,5 +35,22 @@ router.post('/register', async (req, res) => {
     res.status(500).send({ message: err.message });
   }
 });
-
+router.get('/',async (req,res)=>{
+  try{
+     const {data,error}=await server.executeOperation({
+      query:gql`
+      query{
+      getAllUsers{
+      _id
+      name
+      email
+      password
+     }}`
+     })
+     if(error){return res.status(500).send({message:error})}
+     res.status(200).send(data)
+  }catch(err){
+    res.status(500).send({messange:err})
+  }
+})
 module.exports = router;
